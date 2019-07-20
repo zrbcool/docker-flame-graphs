@@ -16,7 +16,8 @@ PERF_MAP_FILE=/tmp/perf-$PID.map
 
 #[ -d "$JAVA_HOME" ] || JAVA_HOME=/etc/alternatives/java_sdk
 #[ -d "$JAVA_HOME" ] || (echo "JAVA_HOME directory at '$JAVA_HOME' does not exist." && false)
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export JAVA_HOME=/app/3rd/jdk/default
 
 rm $PERF_MAP_FILE -f
 (cd $PERF_MAP_DIR/out && java -cp $ATTACH_JAR_PATH:$JAVA_HOME/lib/tools.jar net.virtualvoid.perf.AttachOnce $PID "$OPTIONS")
